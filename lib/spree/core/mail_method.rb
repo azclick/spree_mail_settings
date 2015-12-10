@@ -5,6 +5,7 @@ module Spree
       end
 
       def deliver!(mail)
+        p "======> HELLLO FROM HERE :)"
         if Config.enable_mail_delivery
           mailer.deliver!(mail)
         end
