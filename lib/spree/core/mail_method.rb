@@ -1,3 +1,7 @@
+# docker-compose -f production.yml run --rm shoryuken rails c
+# Apartment::Tenant.switch! "gravity"
+# order = Spree::Order.where(email: "yurifrl@hotmail.com").first
+# Spree::OrderMailer.confirm_email(order, true).deliver_now!
 module Spree
   module Core
     class MailMethod
@@ -13,6 +17,16 @@ module Spree
 
       def mailer
         mailer_class.new(mail_server_settings)
+      end
+
+      def settings
+        p '=========='
+        p caller[0]
+        p 'https://github.com/mikel/mail/blob/master/lib/mail/message.rb#L255'
+        p '=========='
+        {
+          return_response: true
+        }
       end
 
       private
