@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.homepage  = 'https://github.com/spree-contrib/spree_mail_settings'
   s.license   = 'BSD-3'
 
-  s.files        = `git ls-files`.split("\n")
+  s.files        = Dir.glob("./**/*")
   s.test_files   = `git ls-files -- spec/*`.split("\n")
   s.require_path = 'lib'
   s.requirements << 'none'
